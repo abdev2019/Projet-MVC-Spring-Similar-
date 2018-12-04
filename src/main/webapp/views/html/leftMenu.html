@@ -1,0 +1,59 @@
+
+<div class="card">
+
+    <a class="card-header">Menu</a> 
+  
+<form class="card-body" name="f" method="get" myTemplate:action="/EtudiantController/index">
+<ul class="nav nav-pills flex-column"> 
+  
+  <li class="nav-item  ">
+    <a class="nav-link" myTemplate:href="/EtudiantController/index">Liste etudiants</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" myTemplate:href="/EtudiantController/ajouter">Nouveau etudiant</a>
+  </li>
+  
+  <li class="nav-item" style="padding:15px">
+ 	<br>
+  	<u>Rechercher un etudiant</u><br>
+  	Par nom : 
+	  <div class="input-group">
+	    <input myTemplate:value="motCleNom" type="text" name="motCleNom" class="form-control form-control-sm" placeholder="Mot-cle"><br>
+	    <div class="input-group-append">
+	      <button class="btn btn-primary" type="submit">Go</button>
+	    </div>
+	  </div> 
+  </li>
+  
+  <li class="nav-item" style="padding:15px"> 
+  	Par CNE : 
+	  <div class="input-group">
+	    <input myTemplate:value="motCleCne" type="text" name="motCleCne" class="form-control form-control-sm" placeholder="Mot-cle"><br>
+	    <div class="input-group-append">
+	      <button class="btn btn-primary" type="submit">Go</button>
+	    </div>
+	  </div> 
+  </li>
+  
+  <li class="nav-item" style="padding:15px"> 
+  	Par filiere : 
+	  <div class="input-group">
+	    <input  myTemplate:value="motCleFiliere" type="text" name="motCleFiliere" class="form-control form-control-sm" placeholder="Mot-cle"><br>
+	    <div class="input-group-append">
+	      <button class="btn btn-primary" type="submit">Go</button>
+	    </div>
+	  </div> 
+  </li> 
+  
+  	<li style="padding-left:15px">  
+  	<button  type="button"
+     	onclick="document.f.motCleNom.value='';document.f.motCleCne.value='';document.f.motCleFiliere.value='';document.f.filiere.value='';">
+     	Effacer
+   	</button>
+   	</li> 
+</ul>
+</form>
+</div>
+<br>
+<br>
+<br>

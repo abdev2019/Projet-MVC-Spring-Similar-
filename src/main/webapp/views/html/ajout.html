@@ -1,0 +1,71 @@
+<!DOCTYPE html> 
+<html myTemplate:template="template"> 
+<head>
+	<meta charset="utf-8">
+	<title>Ajout d'etudiant</title>
+</head>
+  
+<body myTemplate:bloc="contenu"> 
+ 	<div class="card">  
+       	<h6 class="card-header">Ajout d'etudiant</h6> 
+       
+       	<div class="card-body">
+       	<h6>Entrez les information de l'etudiant ci-dessous :</h6><br>
+         	<form method="post" myTemplate:action="/EtudiantController/ajouter">
+         	<table class="table">
+            <thead>
+              <tr>
+                <th class="text-center">Propriete</th>
+                <th class="text-center">Valeur
+                  <br> </th>
+              </tr>
+            </thead>
+            <tbody> 
+            	<tr>
+                <td>Nom</td>
+                <td>
+                  <input name="nom" class="form-control">
+                </td>
+              	</tr>
+              <tr>
+                <td>CNE</td>
+                <td>
+                  <input name="cne" class="form-control">
+                </td>
+              </tr>
+              <tr>
+                <td>Filiere
+                  <br> </td>
+                <td>
+                  <input name="filiere" class="form-control">
+                </td>
+              </tr>
+              <tr>
+                <td>Age</td>
+                <td>
+                 	<input name="age" class="form-control"> 
+			<small myTemplate:if="errorAge" style="border:none;" colspan="2" class="text-danger">
+			L'age doit etre numeric au moins 18 ans
+			</small> 
+                 </td>
+              </tr> 
+              
+              <tr>
+                <td>&nbsp;</td>
+                <td> 
+                <br>
+                  <button class="btn btn-primary" type="submit">Ajouter
+                    <br> </button>
+                    <button class="btn btn-secondary" type="reset">Effacer<br>
+                	</button>
+                </td>
+              </tr>
+            </tbody>
+         	</table>
+       		</form>
+       	</div>
+   	</div> 
+
+</body>
+
+</html>

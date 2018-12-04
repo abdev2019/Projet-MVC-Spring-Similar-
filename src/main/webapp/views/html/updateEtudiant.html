@@ -1,0 +1,104 @@
+<html myTemplate:template="template"> 
+	<head>
+	<meta charset="utf-8">
+	<title>Mis a jour d'etudiant</title> 
+  	</head>
+  
+  
+<body myTemplate:bloc="contenu">  
+	<div class="card">  
+    <div class="card-primary" >  
+	     	<h6 class="card-header">Mis a jour d'etudiant Numero <span myTemplate:text="etudiant.id"></span></h6> 
+	     
+	   		<div  class="card-body">
+	         <form method="post" myTemplate:action="/EtudiantController/update"   > 
+	           <h6>Les information de l'etudiant ci-dessous :</h6><br>
+	         <input myTemplate:value="etudiant.id" type="hidden" name="id" class="form-control">
+	       	<table class="table"> 
+	         <tbody> 
+	           <tr>
+	             <td>Nom</td>
+	             <td>
+	               <input  myTemplate:value="etudiant.nom" id="nom"  name="nom" class="form-control">
+	             </td>
+	           </tr>
+	           <tr>
+	             <td>CNE</td>
+	             <td>
+	               <input myTemplate:value="etudiant.cne" id="cne"  name="cne" class="form-control">
+	             </td>
+	           </tr>
+	           <tr>
+	             <td>Filiere
+	               <br> </td>
+	             <td>
+	               <input myTemplate:value="etudiant.filiere"  id="filiere"  name="filiere" class="form-control">
+	             </td>
+	           </tr>
+	           <tr>
+	             <td>Age</td>
+	             <td>
+	              	<input myTemplate:value="etudiant.age" id="age" name="age" class="form-control"> 
+					<small myTemplate:if="errorAge" style="border:none;" colspan="2" class="text-danger">
+					L'age doit etre numeric au moins 18 ans
+					</small> 
+	              </td>
+	           </tr> 
+	           
+	           <tr>
+	             <td>&nbsp;</td>
+	             <td> 
+	             <br>
+	               <button class="btn btn-primary" type="submit">Enregistrer</button>
+	               <button class="btn btn-success" type="reset">Restourer</button>
+	               	<button class="btn btn-secondary" type="button"
+	               	onclick="effacer()">
+				 	Effacer
+				</button>
+				 <a class="btn btn-danger" myTemplate:href="/EtudiantController/delete?id={etudiant.id}" style="float:right">Supprimer</a>
+				      </td>
+				    </tr>
+				  </tbody>
+				</table>
+				</form> 
+			</div> 
+    </div>
+   	</div> 
+   
+	<script type="text/javascript">
+		function effacer()
+		{
+			alert(document.getElementById("nom").value);
+			document.getElementById("nom").value='';
+			document.getElementById("age").value='';
+			document.getElementById("cne").value='';
+			document.getElementById("filiere").value='';
+		}
+   	</script>
+
+	
+	<!-- Modal -->
+	<div class="modal fade bg-success" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	        <h5 class="text-success">Les informations sont mis a jour !</h5>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> 
+	      </div>
+	    </div>
+	  </div>
+	</div>
+ 
+	<script myTemplate:if="updateOk" type="text/javascript">$(function() { $('#exampleModal').modal('show'); });</script>
+
+
+</body> 
+</html>

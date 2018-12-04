@@ -1,0 +1,56 @@
+<html myTemplate:template="template">
+<head>
+	<meta charset="utf-8">
+	<title>Index</title> 
+</head>
+<body myTemplate:bloc="contenu">  
+
+    <div class="card">
+    	<h6 class="card-header">Mon profile</h6> 
+    	<div id="contenu">
+			<table class="table"> 
+			<tbody>  
+				
+				<tr>
+					<th>ID</th>
+					<td myTemplate:text="user.id"></td> 
+				</tr>
+				
+				<tr>
+					<th>Username</th>
+					<td myTemplate:text="user.username"></td>
+				</tr>
+				
+				<tr>
+					<th>Type</th>
+					<td myTemplate:text="user.type"></td>
+				</tr>
+				
+				<tr>
+					<th>Password</th>
+					<td  myTemplate:text="user.password"></td>
+				</tr>
+				
+				<tr>
+					<th>
+						<a class="nav-link" href="deconnecter">Deconnecter
+			              <br>
+			            </a>
+					</th>
+					<td></td>
+				</tr>
+				
+			</tbody>
+		</table>
+		</div>
+	</div> 
+	
+</body>
+</html>
+
+
+
+
+
+
+

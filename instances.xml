@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instances>
+	 	<instance id="d" of="projet.jee.dao.EtudiantDAO"></instance>
+		<instance id="metier" of="projet.jee.web.EtudiantController">
+			<inject property="dao" instanceId="d"></inject>
+		</instance>
+		
+		<instance id="daoUser" of="projet.jee.dao.UserDAO"></instance>
+		<instance id="metierUser" of="projet.jee.web.UserController">
+			<inject property="dao" instanceId="daoUser"></inject>
+		</instance>
+</instances> 

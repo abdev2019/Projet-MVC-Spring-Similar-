@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Example</title>
+	<link href="../static/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>  
+
+	<table class="table">
+		<thead>
+			<tr> <th>V</th> <th>Nom</th> <th>Cne</th> <th>Filiere</th> <th>Age</th> </tr>
+		</thead>
+		<tbody>
+			<tr myTemplate:for="etudiant:listeEtudiants"  > 
+				<td>Value : </td>
+				<td myTemplate:text="etudiant.nom"  class="alert-warning "></td>
+				<td myTemplate:text="etudiant.cne"  class="alert-danger  "></td> 
+				<td myTemplate:text="etudiant.filiere"  class="alert-primaty  "></td> 
+				<td myTemplate:text="etudiant.age"  class="alert-secondary  "></td> 
+			</tr>
+		</tbody>
+	</table>
+	
+	 
+	 <div myTemplate:for="etudiant:listeEtudiants"  id="Details"  class="row" >  
+  		<div  class="col alert-danger"  >Details de <h3 class="col" myTemplate:text="etudiant.id"></h3></div>  
+		<div  class="col alert-info">Nom : <span myTemplate:text="etudiant.nom"></span></div> 
+		<div  class="col alert-success" >Cne : <span myTemplate:text="etudiant.cne"></span></div>   
+		<div  class="col alert-warning" >Filiere : <span myTemplate:text="etudiant.filiere"></span></div>  
+		<div class="col">
+			<div>
+				<div>
+					<div class="col">notes : </div> 
+					<div class="col alert-secondary" myTemplate:for="note:etudiant.notes">  
+						<div class="col" myTemplate:text="note"></div> 
+					</div>
+				</div>  
+			</div>
+		</div> 
+	</div>  
+	 
+	 
+	  
+	 
+	 
+	  
+	<div myTemplate:for="etudiant:listeEtudiants"  id="Details"  class="row" > 
+		<div myTemplate:text="etudiant.id" class="col alert-success"></div>
+		<div myTemplate:text="etudiant.nom" class="col alert-success"></div>
+		<div myTemplate:text="etudiant.cne" class="col alert-success"></div>
+		
+		<div  class="col alert-danger" myTemplate:for="note:etudiant.notes">
+			<div class="col" myTemplate:text="note"></div>
+		</div>   
+	</div>
+	<br><br><br>
+	
+	  
+
+	 
+	<div myTemplate:for="etudiant:listeEtudiants" class="row" > 
+		<div myTemplate:text="etudiant.nom"  class="alert-warning col"></div>
+		<div myTemplate:text="etudiant.cne"  class="alert-danger  col"></div> 
+		<div myTemplate:text="etudiant.filiere"  class="alert-primaty  col"></div> 
+		<div myTemplate:text="etudiant.age"  class="alert-secondary  col"></div> 
+	</div>
+	
+	<div myTemplate:text="ex"  class="alert-warning col"></div>
+</body>
+</html>

@@ -1,0 +1,2 @@
+jdbcClass=com.mysql.jdbc.Driver
+dataBase=jdbc:mysql://localhost:3306/dbEtudiants

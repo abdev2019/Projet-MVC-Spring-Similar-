@@ -1,0 +1,71 @@
+<!DOCTYPE html> 
+<html myTemplate:template="template"> 
+<head>
+	<meta charset="utf-8">
+	<title>Confirmation</title> 
+</head>
+
+<body myTemplate:bloc="contenu"> 
+	<div class="card">
+   		<h6 class="card-header">Etudiant Numero <span myTemplate:text="etudiant.id"></span></h6> 
+      	<div class="card-body">
+           	<h6>Les information de l'etudiant ci-dessous :</h6><br> 
+         	<table class="table"> 
+           	<tbody> 
+           	<tr style="border-bottom:solid">
+                <td>Propriete</td>
+                <td>
+                  Valeur
+                </td>
+              	</tr>
+              	
+           	  <tr>
+                 <td>ID</td>
+                 <td myTemplate:text="etudiant.id"></td>
+              	</tr>
+              <tr>
+                 <td>Nom</td>
+					<td myTemplate:text="etudiant.nom"></td>
+              </tr>
+              <tr>
+                 <td>CNE</td>
+                	<td myTemplate:text="etudiant.cne"></td>
+              </tr>
+              <tr>
+               		<td>Filiere</td>
+                 	<td myTemplate:text="etudiant.filiere"></td>
+              </tr>
+              <tr>
+                 <td>Age</td>
+                 <td   myTemplate:text="etudiant.age"></td>
+              </tr>  
+            </tbody>
+          	</table>
+          	<a class="btn-danger btn"  myTemplate:href="/EtudiantController/delete?id={etudiant.id}">DELETE</a>
+			<a class="btn-primary btn" myTemplate:href="/EtudiantController/update?id={etudiant.id}">UPDATE</a> 
+       	</div>
+                
+		<!-- Modal -->
+		<div class="modal fade bg-success" id="modalAddOk" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		       	<h4 class='text-success'>Un nouveau etudiant est ajouté !</h4>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> 
+		      </div>
+		    </div>
+		  </div>
+		</div> 
+		<script myTemplate:if="addOk" type="text/javascript">$(function() { $('#modalAddOk').modal('show'); });</script> 
+		
+   	</div>    	
+</body>
+</html>
